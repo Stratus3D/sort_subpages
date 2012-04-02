@@ -21,20 +21,16 @@ class SortSubpagesPackage extends Package {
     $pkg = parent::install();
 
     Loader::model('single_page');
-    $main_page = SinglePage::add('dashboard/sitemap/sort_subpages');
-    if ($main_page) {
-      $main_page->update(array('cName' =>'ADK', 'cDescription' => 'Manage attribute display groups'));
+    $sort_subpages = SinglePage::add('dashboard/sitemap/sort_subpages');
+    if ($sort_subpages) {
+      $sort_subpages->update(array('cName' =>'Sort Subpages', 'cDescription' => 'Sort Subpages of any page on your websites sitemap'));
     }
-
-    $group_page = SinglePage::add('dashboard/adk/attribute-display-groups');
-    if ($group_page) {
-    $group_page->update(array('cName' =>'Attribute Display Groups', 'cDescription' => 'Manage attribute display groups'));
   }
 
   public function uninstall() {
     $pkg = parent::uninstall();
 
-    Loader::model('single_page');
+    //Loader::model('single_page');
     //$main_page = SinglePage::remove('dashboard/adk');
     //$main_page->update(array('cName' =>'ADK', 'cDescription' => 'Manage attribute Display Groups'));
   }

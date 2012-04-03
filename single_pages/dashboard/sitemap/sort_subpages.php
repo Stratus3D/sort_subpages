@@ -2,14 +2,14 @@
 <script type="text/javascript">
 CCM_LAUNCHER_SITEMAP = 'sort_subpages'; // we need this for when we are moving and copying - ?
 </script>
+<?php echo Loader::helper('concrete/dashboard')->getDashboardPaneHeaderWrapper(t('Sort Subpages'), t('Sort Subpages on sitemap.'), false, false);?>
 
 	<?php 
 	$dh = Loader::helper('concrete/dashboard/sitemap');
 	if ($dh->canRead()) { ?>
 	
 		<div class="ccm-pane-options" id="ccm-<?php echo $searchInstance?>-pane-options">
-            <h1>Sort Subpages</h1>		
-        </div>
+		</div>
 	
 	<?php  } else { ?>
 		<div class="ccm-pane-body">

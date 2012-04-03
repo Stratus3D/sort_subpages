@@ -21,7 +21,7 @@ class SortSubpagesPackage extends Package {
     $pkg = parent::install();
 
     Loader::model('single_page');
-    $sort_subpages = SinglePage::add('dashboard/sitemap/sort_subpages');
+    $sort_subpages = SinglePage::add('dashboard/sitemap/sort_subpages', $pkg);
     if ($sort_subpages) {
       $sort_subpages->update(array('cName' =>'Sort Subpages', 'cDescription' => 'Sort Subpages of any page on your websites sitemap'));
     }
@@ -30,8 +30,7 @@ class SortSubpagesPackage extends Package {
   public function uninstall() {
     $pkg = parent::uninstall();
 
-    //Loader::model('single_page');
-    //$main_page = SinglePage::remove('dashboard/adk');
-    //$main_page->update(array('cName' =>'ADK', 'cDescription' => 'Manage attribute Display Groups'));
+    Loader::model('single_page');
+    $sort_subpages = SinglePage::remove('dashboard/sitemap/sort_subpages');
   }
 } 
